@@ -5,23 +5,51 @@
  */
 package abstraccion;
 
-/**
- *
- * @author T-107
- */
 public class Imc {
     
-    float peso;
-    float altura;
-    
-    public Imc (){
-        peso=90;
-        altura=1.72f;
+    private float peso;
+    private float altura;
+    private boolean flaco;
+    Imc(int i, float f) {
+      
     }
     
+    public void setFlaco (boolean flaco){
+        this.flaco=flaco;
+    }
+    
+    //public boolean isFlaco]() {
+    //return flaco;
+    //}
+    
+    public Imc (float peso)
+    {
+        this.peso=peso;
+    }
+    
+    public void setAltura(float altura)
+    {
+        this.altura=altura;
+    }
+    public Imc (){
+      
+    }
+   
 public float calcular(){
     
     float imc=peso/(altura*altura);
     return imc;
 }
+
+    boolean getPeso() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setPeso(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    boolean isFlaco() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
