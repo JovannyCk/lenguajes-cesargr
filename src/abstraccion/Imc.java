@@ -13,6 +13,10 @@ public class Imc {
     Imc(int i, float f) {
       
     }
+
+    Imc(Float peso, Float altura) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public void setFlaco (boolean flaco){
         this.flaco=flaco;
