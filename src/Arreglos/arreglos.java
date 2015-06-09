@@ -31,7 +31,7 @@ public class arreglos {
    for(byte valor:algo){
        builder.append((char)valor);
    }
-   etiquetax.setText(builder.toString());
+   //etiquetax.setText(builder.toString());
    //etiqueta x no existe     
    
         
