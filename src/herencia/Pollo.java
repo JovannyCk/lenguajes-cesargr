@@ -6,6 +6,10 @@
 package herencia;
 
 
-public class Aguila extends Animal{
+public class Pollo extends Animal implements  ComportamientoRudo{
     
+    @Override
+    public Srting haceRuido(){
+        return "piopioppio";
+    }
 }
