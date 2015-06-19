@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package herencia;
+package MiPrimerExepcion;
 
-
-public class Pollo extends Animal implements  ComportamientoRudo{
+/**
+ *
+ * @author T-107
+ */
+class MenorEdadException extends Exception {
     
-    @Override
-    public Srting haceRuido(){
-        return "piopioppio";
-    }
+     
+    
 }
