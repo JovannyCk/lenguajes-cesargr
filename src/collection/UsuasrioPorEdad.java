@@ -7,18 +7,11 @@ package collection;
 
 import java.util.Comparator;
 
-
-public class UsuarioPorNombre implements Comparator<Usuario>{
-
-   // @Override
-    public int compare(Usuario o1, Usuario o2) {
-        return (01.getNombre().compareTo(o2.getNombre());
-        
+public class UsuasrioPorEdad implements Comparator<Usuario>{
+  //  @Override
+    public int compare(Usuario o1, Usuario o2){
+        return (o1.getEdad().compareTo(o2.getEdad()));
     }
-
-
-    
-    
-    
+            
     
 }

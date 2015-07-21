@@ -8,6 +8,7 @@ package collection;
 import java.util.Collections;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import java.util.Comparator;
 
 /**
  *
@@ -20,6 +21,7 @@ public class InterfazUsuarios extends javax.swing.JFrame {
      */
     public InterfazUsuarios() {
         initComponents();
+        botonCargarUsuarios.setEnabled(false);
     }
 
     /**
@@ -46,6 +48,7 @@ public class InterfazUsuarios extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaUsuario = new javax.swing.JTable();
         botonCargarUsuarios = new javax.swing.JButton();
+        Ordenar = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,6 +59,12 @@ public class InterfazUsuarios extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 102, 0));
 
         jLabel1.setText("Nombre");
+
+        textoNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoNombreActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Edad");
 
@@ -135,6 +144,13 @@ public class InterfazUsuarios extends javax.swing.JFrame {
             }
         });
 
+        Ordenar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ordenar por Nombre", "Oredenar por Edad" }));
+        Ordenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrdenarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -145,15 +161,19 @@ public class InterfazUsuarios extends javax.swing.JFrame {
                         .addGap(86, 86, 86)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(238, 238, 238)
-                        .addComponent(botonCargarUsuarios)))
+                        .addGap(154, 154, 154)
+                        .addComponent(botonCargarUsuarios)
+                        .addGap(32, 32, 32)
+                        .addComponent(Ordenar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(132, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(41, Short.MAX_VALUE)
-                .addComponent(botonCargarUsuarios)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonCargarUsuarios)
+                    .addComponent(Ordenar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(79, 79, 79))
@@ -189,7 +209,7 @@ public class InterfazUsuarios extends javax.swing.JFrame {
     private void botonCargarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCargarUsuariosActionPerformed
         GeneradorDeUsuarios gen=new GeneradorDeUsuarios();
         List<Usuario> usuario= gen.getUsuarios();
-        Collections.sort(usuario, new UsuarioPorNombre());
+        Collections.sort(usuario, new UsuasrioPorEdad());
         tablaUsuario.setModel(new DefaultTableModel(new String []{"Nombre","edad","email"}, gen.getUsuarios().size()));
         
         int fila=0;
@@ -200,6 +220,15 @@ public class InterfazUsuarios extends javax.swing.JFrame {
             fila++;
         }
     }//GEN-LAST:event_botonCargarUsuariosActionPerformed
+
+    private void textoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoNombreActionPerformed
+
+    private void OrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdenarActionPerformed
+        botonCargarUsuarios.setEnabled(true);
+        int indice=Ordenar.getSelectedIndex();
+    }//GEN-LAST:event_OrdenarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,6 +267,7 @@ public class InterfazUsuarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton GuardarUsuario;
+    private javax.swing.JComboBox Ordenar;
     private javax.swing.JButton botonCargarUsuarios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
