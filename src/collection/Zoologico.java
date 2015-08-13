@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package serializacion;
+package collection;
 
-/**
- *
- * @author T-107
- */
+import java.util.Comparator;
+import serializacion.Animal;
+import serializacion.ModeloPersistenciaAnimal;
+
+
 public class Zoologico {
     
     public static void main(String[] args)throws Exception{
@@ -19,5 +20,9 @@ public class Zoologico {
                   m.guardar(a); 
         
     }
+
+    
+    
+    
     
 }
